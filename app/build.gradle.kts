@@ -29,6 +29,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -36,13 +37,36 @@ android {
 }
 
 dependencies {
-
+    // Core Dependencies
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+
+    // Networking with OkHttp
+    implementation(libs.okhttp.v491)
+    implementation(libs.logging.interceptor)
+
+
+
+
+    // LiveData and ViewModel for MVVM
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.lifecycle.livedata.ktx)
+
+    // RecyclerView for displaying movie list
+    implementation(libs.recyclerview)
+
+
+    implementation(libs.moshi)
+    implementation(libs.moshi.kotlin)
+    implementation(libs.converter.moshi)
+
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation(libs.okhttp)
+    implementation(libs.picasso)
+
+    implementation(libs.gson)
 }
