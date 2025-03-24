@@ -24,7 +24,7 @@ public class MovieViewModel extends ViewModel {
         fetchMovies(query);
     }
     private void fetchMovies(String query) {
-        String apiKey = "7a169c"; // Replace with your actual API key
+        String apiKey = "21468ff5"; // Replace with your actual API key
 
         new Thread(() -> {
             try {

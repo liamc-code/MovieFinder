@@ -2,6 +2,8 @@ package com.example.moviefinder.view;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -37,8 +39,12 @@ public class MovieDetailActivity extends AppCompatActivity {
         posterImageView = findViewById(R.id.detailPosterImageView);
         backButton = findViewById(R.id.backButton);
 
-        // Add click listener for the back button
-        backButton.setOnClickListener(v -> finish());
+        // Add click listener for the back button (and animation)
+        Animation clickAnim = AnimationUtils.loadAnimation(this, R.anim.button_click);
+        backButton.setOnClickListener(v -> {
+            v.startAnimation(clickAnim);
+            finish();
+        });
 
         // Get the imdbID from the intent
         String imdbID = getIntent().getStringExtra("imdbID");
@@ -55,7 +61,7 @@ public class MovieDetailActivity extends AppCompatActivity {
     private void fetchMovieDetails(String imdbID) {
         new Thread(() -> {
             try {
-                String apiKey = "7a169c"; // Replace with your API key
+                String apiKey = "7a169c"; //
                 String jsonResponse = ApiClient.getMovieDetails(imdbID, apiKey);
 
                 // Log the response for debugging

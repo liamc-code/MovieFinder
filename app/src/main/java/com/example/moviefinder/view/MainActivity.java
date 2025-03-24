@@ -2,6 +2,8 @@ package com.example.moviefinder.view;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -57,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Animation clickAnim = AnimationUtils.loadAnimation(this,R.anim.button_click);
         binding.searchButton.setOnClickListener(view -> {
+            view.startAnimation(clickAnim);
             String query = binding.searchEditText.getText().toString().trim();
             if (!query.isEmpty()) {
                 movieViewModel.searchMovies(query);

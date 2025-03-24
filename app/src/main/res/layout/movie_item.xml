@@ -3,7 +3,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:background="@drawable/movie_item_background"
+    android:padding="10dp"
+    android:layout_marginVertical="8dp">
 
     <!-- Movie Poster Image -->
     <ImageView
@@ -20,7 +22,7 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
+        android:textColor="#C7C7C7"
         android:layout_marginBottom="5dp"/>
 
 
@@ -29,6 +31,6 @@
         android:id="@+id/yearTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:textColor="#C7C7C7"
         android:textSize="14sp"/>
 </LinearLayout>

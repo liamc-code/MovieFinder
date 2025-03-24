@@ -3,26 +3,36 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#312C3C"
     android:padding="16dp">
 
     <!-- EditText for movie search input -->
     <EditText
         android:id="@+id/searchEditText"
-        android:layout_width="369dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Search for a movie"
+        android:layout_marginTop="12dp"
+        android:autofillHints=""
+        android:hint="@string/search_for_a_movie"
+        android:textColorHint="#C7C7C7"
+        android:textColor="#C7C7C7"
         android:inputType="text" />
 
+
     <!-- Button to trigger search -->
-
-    <!-- RecyclerView to display search results -->
-
     <Button
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search" />
+        android:background="@drawable/button_background"
+        android:text="@string/search"
+        android:textColor="#E7E7E7"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:paddingHorizontal="70dp"/>
 
+    <!-- RecyclerView to display search results -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/movieRecyclerView"
         android:layout_width="match_parent"
