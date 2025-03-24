@@ -13,7 +13,7 @@ import java.util.List;
 
 public class MovieViewModel extends ViewModel {
     // Declare the MutableLiveData field
-    private MutableLiveData<List<Movie>> movies = new MutableLiveData<>();
+    private final MutableLiveData<List<Movie>> movies = new MutableLiveData<>();
 
     // Public getter to expose LiveData (not MutableLiveData) to observers
     public LiveData<List<Movie>> getMovies() {

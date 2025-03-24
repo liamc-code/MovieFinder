@@ -10,13 +10,13 @@
     <EditText
         android:id="@+id/searchEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:layout_marginTop="12dp"
         android:autofillHints=""
         android:hint="@string/search_for_a_movie"
-        android:textColorHint="#C7C7C7"
+        android:inputType="text"
         android:textColor="#C7C7C7"
-        android:inputType="text" />
+        android:textColorHint="#C7C7C7" />
 
 
     <!-- Button to trigger search -->
@@ -37,5 +37,6 @@
         android:id="@+id/movieRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:importantForAccessibility="no"/>
 </LinearLayout>
