@@ -1,5 +1,6 @@
 package com.example.moviefinder.view;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,8 +61,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MovieViewHolder> {
                     });
         } else {
             Log.d("Picasso", "Invalid poster URL for: " + movie.getTitle());
-            holder.posterImageView.setImageResource(R.drawable.placeholder_image); // Use placeholder instead of error image
+            holder.posterImageView.setImageResource(R.drawable.placeholder_image);
         }
+
+        // Add click listener to the item view
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), MovieDetailActivity.class);
+            intent.putExtra("imdbID", movie.getImdbID());
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override
