@@ -1,5 +1,6 @@
 package com.example.moviefinder.view;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.moviefinder.R;
 import com.example.moviefinder.model.Movie;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Callback;
 
 import java.util.List;
 
@@ -29,21 +31,42 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MovieViewHolder> {
     @Override
     public void onBindViewHolder(MovieViewHolder holder, int position) {
         Movie movie = movieList.get(position);
+        holder.titleTextView.setText(movie.getTitle() != null ? movie.getTitle() : "No Title");
+        holder.yearTextView.setText(movie.getYear() != null ? movie.getYear() : "No Year");
 
-        holder.titleTextView.setText(movie.getTitle());
-        holder.yearTextView.setText(movie.getYear());
+        String posterUrl = movie.getPosterUrl();
+        Log.d("Picasso", "Original poster URL: " + posterUrl);
 
-        // Load the poster image using Picasso
-        Picasso.get()
-                .load(movie.getPosterUrl())  // Movie poster URL
-                .placeholder(R.drawable.placeholder_image)
-                .error(R.drawable.error_image)
-                .into(holder.posterImageView);
+        if (posterUrl != null && posterUrl.startsWith("http://")) {
+            posterUrl = posterUrl.replace("http://", "https://");
+            Log.d("Picasso", "Converted to HTTPS: " + posterUrl);
+        }
+
+        if (posterUrl != null && !posterUrl.equals("N/A")) {
+            Picasso.get()
+                    .load(posterUrl)
+                    .placeholder(R.drawable.placeholder_image)
+                    .error(R.drawable.error_image)
+                    .into(holder.posterImageView, new Callback() {
+                        @Override
+                        public void onSuccess() {
+                            Log.d("Picasso", "Successfully loaded image for: " + movie.getTitle());
+                        }
+
+                        @Override
+                        public void onError(Exception e) {
+                            Log.e("Picasso", "Failed to load image for: " + movie.getTitle() + ", Error: " + e.getMessage());
+                        }
+                    });
+        } else {
+            Log.d("Picasso", "Invalid poster URL for: " + movie.getTitle());
+            holder.posterImageView.setImageResource(R.drawable.placeholder_image); // Use placeholder instead of error image
+        }
     }
 
     @Override
     public int getItemCount() {
-        return movieList.size();
+        return movieList != null ? movieList.size() : 0;
     }
 
     public static class MovieViewHolder extends RecyclerView.ViewHolder {

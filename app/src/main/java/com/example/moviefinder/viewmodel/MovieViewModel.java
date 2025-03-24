@@ -23,7 +23,6 @@ public class MovieViewModel extends ViewModel {
     public void searchMovies(String query) {
         fetchMovies(query);
     }
-
     private void fetchMovies(String query) {
         String apiKey = "7a169c"; // Replace with your actual API key
 
@@ -42,7 +41,15 @@ public class MovieViewModel extends ViewModel {
                 // Log the parsed response for verification
                 if (movieResponse != null && movieResponse.getSearch() != null) {
                     List<Movie> movieList = movieResponse.getSearch();
+
+                    // Log the movies to verify data
                     Log.d("API Response", "Movies found: " + movieList.size());
+
+                    // Ensure that the posterUrl is set correctly by calling the setter
+                    for (Movie movie : movieList) {
+                        Log.d("Movie", "Setting poster URL: " + movie.getPosterUrl());  // Verify poster URL
+                        movie.setPosterUrl(movie.getPosterUrl());
+                    }
 
                     // Update LiveData with the movie list
                     movies.postValue(movieList); // This should now work
@@ -57,4 +64,6 @@ public class MovieViewModel extends ViewModel {
             }
         }).start();
     }
+
+
 }

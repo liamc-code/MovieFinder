@@ -1,17 +1,21 @@
 package com.example.moviefinder.model;
 
+import android.util.Log;
+import com.google.gson.annotations.SerializedName;
+
 public class Movie {
+    @SerializedName("Title")
     private String title;
-    private String studio;
-    private String rating;
+
+    @SerializedName("Year")
     private String year;
-    private String posterUrl;  // Add this field for the movie poster URL
+
+    @SerializedName("Poster")
+    private String posterUrl;
 
     // Constructor
-    public Movie(String title, String studio, String rating, String year, String posterUrl) {
+    public Movie(String title, String year, String posterUrl) {
         this.title = title;
-        this.studio = studio;
-        this.rating = rating;
         this.year = year;
         this.posterUrl = posterUrl;
     }
@@ -23,22 +27,6 @@ public class Movie {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getStudio() {
-        return studio;
-    }
-
-    public void setStudio(String studio) {
-        this.studio = studio;
-    }
-
-    public String getRating() {
-        return rating;
-    }
-
-    public void setRating(String rating) {
-        this.rating = rating;
     }
 
     public String getYear() {
@@ -54,6 +42,7 @@ public class Movie {
     }
 
     public void setPosterUrl(String posterUrl) {
+        Log.d("Movie", "Setting poster URL: " + posterUrl);
         this.posterUrl = posterUrl;
     }
 }
