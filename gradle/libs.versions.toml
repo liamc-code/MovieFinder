@@ -16,6 +16,8 @@ picasso = "2.71828"
 picassoVersion = "2.8"
 recyclerview = "1.4.0"
 retrofit = "2.9.0"
+googleGmsGoogleServices = "4.4.2"
+firebaseFirestore = "25.1.3"
 
 [libraries]
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
@@ -39,7 +41,9 @@ picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
 picasso-v28 = { module = "com.squareup.picasso:picasso", version.ref = "picassoVersion" }
 recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 

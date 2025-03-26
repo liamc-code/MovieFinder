@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 import com.example.moviefinder.model.Movie;
 import com.example.moviefinder.model.MovieResponse;
 import com.example.moviefinder.utils.ApiClient;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.List;
@@ -14,6 +15,8 @@ import java.util.List;
 public class MovieViewModel extends ViewModel {
     // Declare the MutableLiveData field
     private final MutableLiveData<List<Movie>> movies = new MutableLiveData<>();
+
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     // Public getter to expose LiveData (not MutableLiveData) to observers
     public LiveData<List<Movie>> getMovies() {

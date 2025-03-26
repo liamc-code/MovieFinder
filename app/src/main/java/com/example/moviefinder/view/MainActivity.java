@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private MovieViewModel movieViewModel;
     private MyAdapter myAdapter;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
