@@ -62,7 +62,10 @@ dependencies {
     implementation(libs.moshi)
     implementation(libs.moshi.kotlin)
     implementation(libs.converter.moshi)
+
+    // Firebase Tools
     implementation(libs.firebase.firestore)
+    implementation(libs.firebase.auth)
 
     // Testing
     testImplementation(libs.junit)
