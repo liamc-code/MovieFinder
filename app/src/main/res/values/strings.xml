@@ -3,4 +3,10 @@
     <string name="search">Search</string>
     <string name="search_for_a_movie">Search for a movie</string>
     <string name="back">Back</string>
+    <string name="click_to_register">Register</string>
+    <string name="login">Login</string>
+    <string name="movie_finder">Movie Finder</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="retype_password">Retype Password</string>
 </resources>
