@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -37,9 +39,12 @@ public class Register extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        // Register event
+        Animation clickAnim = AnimationUtils.loadAnimation(this,R.anim.button_click);
         binding.regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                v.startAnimation(clickAnim);
                 email = binding.emailEditText.getText().toString().trim();
                 password = binding.passwordEditText.getText().toString().trim();
                 confirmPass = binding.confirmPassEditText.getText().toString().trim();
@@ -52,8 +57,17 @@ public class Register extends AppCompatActivity {
             }
         });
 
+        // Cancel/Return to Login event
+        binding.cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
 
+    // verify reg fields
     private boolean verifyLogin(String email, String password, String confirmPass) {
         String EMAIL_REGEX = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
 
@@ -62,11 +76,13 @@ public class Register extends AppCompatActivity {
         binding.passwordEditText.setError(null);
         binding.confirmPassEditText.setError(null);
 
+        // check email
         if(email.isEmpty() || !email.matches(EMAIL_REGEX)) {
             binding.emailEditText.setError("Invalid email");
             return false;
         }
 
+        // check password (confirm with retyped pass)
         if(password.isEmpty() || !password.equals(confirmPass)) {
             binding.confirmPassEditText.setError("Incorrect Password");
             return false;
@@ -75,7 +91,7 @@ public class Register extends AppCompatActivity {
     }
 
     private void registerUser(String email, String password) {
-        mAuth.createUserWithEmailAndPassword(email, password)
+        mAuth.createUserWithEmailAndPassword(email, password) // create user with email/pass
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -83,8 +99,8 @@ public class Register extends AppCompatActivity {
                             // sign in successful, add user sign-in details to view
                             Log.d("tag", "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(Register.this, "registerUser Pass." +
-                                    user.getUid(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this, "Successfully Registered",
+                                    Toast.LENGTH_SHORT).show();
 
                             Intent intentObj = new Intent(getApplicationContext(), Login.class);
                             startActivity(intentObj);
@@ -93,7 +109,7 @@ public class Register extends AppCompatActivity {
                             // Sign in fails, error msg for user
                             Log.d("tag", "createUserWithEmail:failure",
                                     task.getException());
-                            Toast.makeText(Register.this, "Auth failed.",
+                            Toast.makeText(Register.this, "Registration Failed. Try Again",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }

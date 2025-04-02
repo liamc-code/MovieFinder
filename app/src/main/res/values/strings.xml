@@ -5,8 +5,9 @@
     <string name="back">Back</string>
     <string name="click_to_register">Register</string>
     <string name="login">Login</string>
-    <string name="movie_finder">Movie Finder</string>
+    <string name="movie_finder">Movie Finder 🎥</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="retype_password">Retype Password</string>
+    <string name="cancel">Return to Login</string>
 </resources>

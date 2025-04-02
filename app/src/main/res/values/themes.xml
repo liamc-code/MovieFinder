@@ -3,6 +3,11 @@
     <style name="Base.Theme.MovieFinder" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- In res/values/themes.xml -->
+        <item name="colorControlNormal">#1D0050</item> <!-- For inactive line -->
+        <item name="colorControlActivated">#673AB7</item> <!-- For active/focused line -->
+
     </style>
 
     <style name="Theme.MovieFinder" parent="Base.Theme.MovieFinder" />

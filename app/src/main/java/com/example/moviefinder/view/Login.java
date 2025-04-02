@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -36,6 +38,7 @@ public class Login extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        // Register click event
         binding.registerNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,19 +47,26 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        // Login click event
+        Animation clickAnim = AnimationUtils.loadAnimation(this,R.anim.button_click);
         binding.loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                v.startAnimation(clickAnim);
                 email = binding.emailEditText.getText().toString().trim();
                 password = binding.passwordEditText.getText().toString().trim();
 
                 if(email.isEmpty()) {
                     binding.emailEditText.setError("Email is required");
+                    Toast.makeText(Login.this, "Email/Password is Incorrect.",
+                            Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if(password.isEmpty()) {
                     binding.passwordEditText.setError("Password is required");
+                    Toast.makeText(Login.this, "Email/Password is Incorrect.",
+                            Toast.LENGTH_SHORT).show();
                     return;
                 }
 
