@@ -16,6 +16,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".view.FavoritesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.MovieEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.FavoriteDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.Register"
             android:exported="false" />
         <activity
