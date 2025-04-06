@@ -1,0 +1,71 @@
+Firebase
+Strengthen your ability to apply your knowledge of Firebase
+Overview
+Overview: Create a simple Ul for your Movie Database which requires the user
+to authenticate before allowing them to perform full CRUD operations (Create,
+Read, Update and Delete).
+For the database component you will be using Firebase Firestore and for the
+authentication component you will be using Firebase Authentication.
+Your Ul should include these screens: A Movie List Screen and an Add/Edit
+Screen, a Register Screen and a Login Screen.
+You may reuse some of the Ul elements from previous assignments for this
+assignment.
+Your app must be written in either Java 
+You can work in a group of three from your section.
+
+Instructions:
+Part 1 Movie Search/Favorite List Screen (25 Marks):
+1. Mandatory: Ensure your Movie Favorite List Screen's logic (Activity)
+connects and works with Firebase Firestore (5 Marks).
+2. Display your 20 Favorite Movies in a Table or similar Element (e.g.,
+RecyclerView). Each Row in your list should include the Movie Title, Studio, a
+Thumbnail of the Movie Poster and the Critics Rating (5 Marks).
+3. Each Row in your List should use a Custom View (5 Marks).
+4. Include a Ul Element or interaction that allows the User to Add a new movie
+to the Movie List by navigating to the Add/Edit Screen. When Navigation
+completes, ensure the Add/Edit screen modifies the Title and the main
+button to with an appropriate message (e.g., either Add or Edit) (2.5 Marks).
+5. Include a Ul Element or interaction that allows the User to Edit an existing
+movie in the Movie List by navigating to the Add/Edit Screen (2.5 Marks).
+6. Include a Ul Element or interaction that allows the User to Delete an existing
+movie in the Movie List (5 Marks).
+Part 2 Add / Edit Screen (15 Marks):
+1. Mandatory: Ensure your Add / Edit Screen's logic (Activity) connects and
+works with Firebase Fir sestore (5 Marks).
+2. Your Add / Edit Screen should include Ul Elements (Text Fields) that allow
+the user to both view, edit or add a Movie (5 Marks).
+3. Your Add / Edit Screen should include a Ul Element that allows the user to
+submit their changes (2.5 Marks).
+4. Your Add / Edit Screen should include a Ul Element that allows the user to
+cancel any changes and navigate back to the Movie List Screen (2.5 Marks).
+Part 3 Register Screen (15 Marks):
+1. Mandatory: Ensure your Register Screen's logic (Activity) connects and
+works with Firebase Authentication (5 Marks).
+2. Your Registration Screen should include Ul Elements (Text Fields) that allow
+the user to register as a new user (5 Marks).
+3. Your Registration Screen should include a Ul Element that navigate the user
+back to the Login Screen when the user has completed registration (2.5
+Marks)
+4. Your Add / Edit Screen should include a Ul Element that allows the user to
+cancel registration and navigate back to the Login Screen (2.5 Marks).
+Part 4 Login Screen (15 Marks):
+1. Mandatory: Ensure your Login Screen's logic (Activity) connects and works
+with Firebase Authentication (5 Marks).
+2. Your Registration Screen should include Ul Elements (Text Fields) that allow
+the user to login as a returning user (5 Marks).
+3. Your Login Screen should include a Ul Element that allows the user to Login
+(2.5 Marks)
+4. If the Login attempt is unsuccessful, an alert (or other Ul Elements) should
+be displayed that informs the user that their Login attempt has failed. (2.5
+Marks).
+Part 5 Your App is Aesthetically Pleasing (10 Marks):
+1. You've designed your App with good Aesthetic standards including
+appropriate margins, padding, colors, contrast and overall layout while
+always keeping the user in mind (10 Marks).
+Part 6 Code Quality: (10 Marks)
+1. Ensure your app includes the following components (10 Marks).
+a. Clean Build
+b. MVVM Architecture.
+c. LiveData.
+d. ViewBinding.
+e. Firebase.

@@ -6,35 +6,20 @@
     android:background="#312C3C"
     android:padding="16dp">
 
-    <!-- EditText for movie search input -->
-    <EditText
-        android:id="@+id/searchEditText"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="12dp"
-        android:autofillHints=""
-        android:hint="@string/search_for_a_movie"
-        android:inputType="text"
-        android:textColor="#C7C7C7"
-        android:textColorHint="#C7C7C7" />
-
-
-    <!-- Button to trigger search -->
-    <Button
-        android:id="@+id/searchButton"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_background"
-        android:text="@string/search"
-        android:textColor="#E7E7E7"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:paddingHorizontal="70dp"/>
+        android:text="Favorites"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
 
-    <!-- RecyclerView to display search results -->
+    <!-- RecyclerView to display favorite movies -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/movieRecyclerView"
+        android:id="@+id/favoritesRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -51,18 +36,18 @@
             android:id="@+id/searchTabButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/selected_button_background"
+            android:background="@drawable/button_background"
             android:text="Search"
             android:textColor="#FFFFFF"
             android:layout_margin="8dp"/>
             
         <Button
-            android:id="@+id/favoritesButton"
+            android:id="@+id/favoritesTabButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_background"
+            android:background="@drawable/selected_button_background"
             android:text="Favorites"
             android:textColor="#FFFFFF"
             android:layout_margin="8dp"/>
     </LinearLayout>
-</LinearLayout>
+</LinearLayout> 

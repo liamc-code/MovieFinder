@@ -24,6 +24,20 @@ public class Movie {
 
     @SerializedName("Actors")
     private String actors;
+    
+    // OMDB API do have a field for studio.
+    // So for future proofing this field has been added.
+    private String studio;
+    private String rating;
+    
+
+    private String documentId;
+
+
+    public Movie() {
+        // Required empty constructor for Firestore.
+        // Firestore uses it to create an empty Movie object before populating it with data from the database.
+    }
 
     // Constructor
     public Movie(String title, String year, String posterUrl) {
@@ -88,5 +102,29 @@ public class Movie {
 
     public void setActors(String actors) {
         this.actors = actors;
+    }
+    
+    public String getStudio() {
+        return studio;
+    }
+
+    public void setStudio(String studio) {
+        this.studio = studio;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+    
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
     }
 }

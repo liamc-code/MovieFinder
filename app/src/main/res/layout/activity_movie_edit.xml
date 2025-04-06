@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#312C3C"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/editScreenTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Movie"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Movie Image Preview -->
+        <ImageView
+            android:id="@+id/movieImagePreview"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:background="#20FFFFFF"
+            android:scaleType="centerCrop"/>
+
+        <!-- Title Input -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/movieTitleInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:inputType="text"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:hint="Enter movie title"
+            android:minHeight="48dp"
+            android:background="@drawable/edit_text_background"
+            android:padding="8dp"/>
+
+        <!-- Year Input -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Year"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/movieYearInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:inputType="number"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:hint="Enter release year"
+            android:minHeight="48dp"
+            android:background="@drawable/edit_text_background"
+            android:padding="8dp"/>
+
+        <!-- Studio Input -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Studio"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/movieStudioInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:inputType="text"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:hint="Enter studio name"
+            android:minHeight="48dp"
+            android:background="@drawable/edit_text_background"
+            android:padding="8dp"/>
+
+        <!-- Rating Input -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Critics Rating"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/movieRatingInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:inputType="text"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:hint="Enter rating (e.g., 8.5/10)"
+            android:minHeight="48dp"
+            android:background="@drawable/edit_text_background"
+            android:padding="8dp"/>
+
+        <!-- Poster URL Input -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Poster URL"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/moviePosterUrlInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:inputType="textUri"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:hint="Enter poster URL"
+            android:minHeight="48dp"
+            android:background="@drawable/edit_text_background"
+            android:padding="8dp"/>
+
+        <!-- Plot Input -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Plot"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/moviePlotInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:inputType="textMultiLine"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:hint="Enter movie plot"
+            android:minHeight="100dp"
+            android:background="@drawable/edit_text_background"
+            android:padding="8dp"
+            android:gravity="top"/>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancel"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/button_background"
+                android:textColor="#FFFFFF"/>
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Save"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/button_background"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView> 

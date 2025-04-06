@@ -24,3 +24,5 @@ public class MovieResponse {
         return search != null && !search.isEmpty();
     }
 }
+
+
